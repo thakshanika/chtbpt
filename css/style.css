@@ -1,658 +1,462 @@
-<!DOCTYPE html>
-<html lang="en">
+/* ========================= */
+/* Google Font */
+/* ========================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#0b0f19;
+color:#ffffff;
+overflow-x:hidden;
+}
+
+/* ========================= */
+/* Navbar */
+/* ========================= */
+
+header{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:20px 8%;
+background:rgba(15,15,20,.75);
+backdrop-filter:blur(15px);
+z-index:999;
+}
+
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:10px;
+font-size:28px;
+font-weight:700;
+color:#4f9cff;
+}
+
+.logo i{
+font-size:32px;
+}
+
+.nav-links{
+display:flex;
+list-style:none;
+gap:35px;
+}
+
+.nav-links a{
+text-decoration:none;
+color:white;
+transition:.3s;
+font-weight:500;
+}
+
+.nav-links a:hover{
+color:#4f9cff;
+}
+
+.buttons{
+display:flex;
+gap:15px;
+}
+
+.login-btn{
+padding:10px 22px;
+border:2px solid #4f9cff;
+border-radius:40px;
+text-decoration:none;
+color:white;
+transition:.3s;
+}
+
+.login-btn:hover{
+background:#4f9cff;
+}
+
+.signup-btn{
+padding:10px 22px;
+background:#4f9cff;
+border-radius:40px;
+text-decoration:none;
+color:white;
+transition:.3s;
+}
+
+.signup-btn:hover{
+transform:translateY(-3px);
+box-shadow:0 0 25px #4f9cff;
+}
+
+/* ========================= */
+/* Hero */
+/* ========================= */
+
+.hero{
+min-height:100vh;
+padding:140px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:50px;
+}
+
+.hero-left{
+flex:1;
+}
+
+.hero-left h1{
+font-size:65px;
+line-height:80px;
+font-weight:800;
+}
+
+.hero-left span{
+color:#4f9cff;
+}
+
+.hero-left p{
+margin:30px 0;
+font-size:18px;
+line-height:32px;
+color:#d9d9d9;
+}
 
-<head>
+.hero-buttons{
+display:flex;
+gap:20px;
+}
+
+.btn-primary{
+background:#4f9cff;
+padding:15px 35px;
+border-radius:40px;
+text-decoration:none;
+color:white;
+font-weight:600;
+transition:.3s;
+}
 
-    <meta charset="UTF-8">
+.btn-primary:hover{
+transform:translateY(-5px);
+box-shadow:0 0 30px #4f9cff;
+}
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+.btn-secondary{
+border:2px solid #4f9cff;
+padding:15px 35px;
+border-radius:40px;
+text-decoration:none;
+color:white;
+transition:.3s;
+}
 
-    <title>CODEX EDU BOT | AI Learning Platform</title>
+.btn-secondary:hover{
+background:#4f9cff;
+}
 
-    <link rel="stylesheet" href="css/style.css">
+.hero-right{
+flex:1;
+display:flex;
+justify-content:center;
+}
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+.hero-right img{
+width:100%;
+max-width:600px;
+animation:float 4s ease-in-out infinite;
+}
 
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+@keyframes float{
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+0%{
+transform:translateY(0);
+}
 
-    <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+50%{
+transform:translateY(-15px);
+}
 
-</head>
+100%{
+transform:translateY(0);
+}
 
-<body>
+}
+/* ========================= */
+/* Features Section */
+/* ========================= */
 
-<!-- ===================== -->
-<!-- Navigation -->
-<!-- ===================== -->
+.features{
 
-<header>
+padding:100px 8%;
+text-align:center;
 
-<nav class="navbar">
+}
 
-<div class="logo">
+.features h2{
 
-<i class="fa-solid fa-graduation-cap"></i>
+font-size:45px;
+margin-bottom:15px;
 
-<h2>CODEX EDU BOT</h2>
+}
 
-</div>
+.features>p{
 
-<ul class="nav-links">
+color:#b8b8b8;
+margin-bottom:50px;
 
-<li><a href="#">Home</a></li>
+}
 
-<li><a href="#">Features</a></li>
 
-<li><a href="#">Teachers</a></li>
+.feature-container{
 
-<li><a href="#">Pricing</a></li>
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:25px;
 
-<li><a href="#">Contact</a></li>
+}
 
-</ul>
 
-<div class="buttons">
+.feature-card{
 
-<a href="#" class="login-btn">
+background:rgba(255,255,255,0.05);
+border:1px solid rgba(255,255,255,0.1);
+padding:35px 25px;
+border-radius:25px;
+transition:.4s;
+backdrop-filter:blur(15px);
 
-Login
+}
 
-</a>
 
-<a href="#" class="signup-btn">
+.feature-card:hover{
 
-Get Started
+transform:translateY(-10px);
+border-color:#4f9cff;
+box-shadow:0 0 30px rgba(79,156,255,.3);
 
-</a>
+}
 
-</div>
 
-</nav>
+.feature-card i{
 
-</header>
+font-size:40px;
+color:#4f9cff;
+margin-bottom:20px;
 
+}
 
 
-<!-- ===================== -->
-<!-- Hero Section -->
-<!-- ===================== -->
+.feature-card h3{
 
-<section class="hero">
+font-size:22px;
+margin-bottom:15px;
 
-<div class="hero-left">
+}
 
-<h1>
 
-The Future of
+.feature-card p{
 
-<span>
+color:#b8b8b8;
+line-height:25px;
 
-Online Education
+}
 
-</span>
 
-Starts Here.
+/* ========================= */
+/* Why Choose Us */
+/* ========================= */
 
-</h1>
 
-<p>
+.why-us{
 
-Manage your online classes with one powerful platform.
+padding:100px 8%;
+display:flex;
+align-items:center;
+gap:60px;
 
-AI Chatbot, Timetable, Homework, Notices,
+}
 
-Attendance, Results and more.
 
-</p>
+.why-left{
 
-<div class="hero-buttons">
+flex:1;
 
-<a href="#" class="btn-primary">
+}
 
-Start Free
 
-</a>
+.why-left img{
 
-<a href="#" class="btn-secondary">
+width:100%;
+border-radius:25px;
+box-shadow:0 0 40px rgba(0,0,0,.5);
 
-Watch Demo
+}
 
-</a>
 
-</div>
+.why-right{
 
-</div>
+flex:1;
 
+}
 
-<div class="hero-right">
 
-<img src="assets/images/hero.png" alt="Hero Image">
+.why-right h2{
 
-</div>
+font-size:45px;
+margin-bottom:20px;
 
-</section>
+}
 
 
+.why-right p{
 
-<!-- ===================== -->
-<!-- Features -->
-<!-- ===================== -->
+color:#b8b8b8;
+line-height:30px;
+margin-bottom:30px;
 
-<section class="features">
+}
 
-<h2>
 
-Everything You Need
+.why-item{
 
-</h2>
+display:flex;
+align-items:center;
+gap:15px;
+margin:20px 0;
+font-size:18px;
 
-<p>
+}
 
-Powerful tools for teachers and students.
 
-</p>
+.why-item i{
 
-<div class="feature-container">
+background:#4f9cff;
+width:30px;
+height:30px;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:50%;
 
+}
 
-<div class="feature-card">
 
-<i class="fa-solid fa-robot"></i>
 
-<h3>AI Chatbot</h3>
+/* ========================= */
+/* Statistics */
+/* ========================= */
 
-<p>
 
-Instant answers for students.
+.stats{
 
-</p>
+padding:80px 8%;
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:25px;
 
-</div>
+}
 
 
-<div class="feature-card">
+.stat-card{
 
-<i class="fa-solid fa-calendar-days"></i>
+text-align:center;
+padding:35px;
+background:#111827;
+border-radius:20px;
 
-<h3>Class Timetable</h3>
+}
 
-<p>
 
-Easy schedule management.
+.stat-card h2{
 
-</p>
+font-size:45px;
+color:#4f9cff;
 
-</div>
+}
 
 
-<div class="feature-card">
+.stat-card p{
 
-<i class="fa-solid fa-book-open"></i>
+color:#ccc;
+margin-top:10px;
 
-<h3>Homework</h3>
+}
 
-<p>
 
-Share assignments online.
+/* ========================= */
+/* AI Preview */
+/* ========================= */
 
-</p>
 
-</div>
+.ai-preview{
 
+padding:100px 8%;
+text-align:center;
 
-<div class="feature-card">
+}
 
-<i class="fa-solid fa-chart-line"></i>
 
-<h3>Student Results</h3>
+.ai-preview h2{
 
-<p>
+font-size:45px;
 
-Track progress easily.
+}
 
-</p>
 
-</div>
+.ai-preview>p{
 
+color:#aaa;
+margin:15px 0 40px;
 
-</div>
+}
 
-</section>
 
+.chat-preview{
 
-<script src="js/app.js"></script>
+max-width:700px;
+margin:auto;
+background:#111827;
+padding:30px;
+border-radius:25px;
+text-align:left;
 
-</body>
-</html><!-- ===================== -->
-<!-- Why Choose Us -->
-<!-- ===================== -->
+}
 
-<section class="why-us">
 
-    <div class="why-left">
+.message{
 
-        <img src="assets/images/dashboard.png" alt="Dashboard Preview">
+padding:15px 20px;
+margin:15px 0;
+border-radius:15px;
+max-width:80%;
 
-    </div>
+}
 
-    <div class="why-right">
 
-        <h2>Why Choose CODEX EDU BOT?</h2>
+.student{
 
-        <p>
-            A complete education platform designed for modern teachers,
-            online institutes and students.
-        </p>
+background:#4f9cff;
+margin-left:auto;
 
-        <div class="why-item">
+}
 
-            <i class="fa-solid fa-check"></i>
 
-            <span>Modern & Responsive Design</span>
+.ai{
 
-        </div>
+background:#222b3c;
 
-        <div class="why-item">
-
-            <i class="fa-solid fa-check"></i>
-
-            <span>AI Powered Student Assistant</span>
-
-        </div>
-
-        <div class="why-item">
-
-            <i class="fa-solid fa-check"></i>
-
-            <span>Easy Teacher Dashboard</span>
-
-        </div>
-
-        <div class="why-item">
-
-            <i class="fa-solid fa-check"></i>
-
-            <span>Fast & Secure Platform</span>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- ===================== -->
-<!-- Statistics -->
-<!-- ===================== -->
-
-<section class="stats">
-
-<div class="stat-card">
-
-<h2>10K+</h2>
-
-<p>Students</p>
-
-</div>
-
-<div class="stat-card">
-
-<h2>500+</h2>
-
-<p>Teachers</p>
-
-</div>
-
-<div class="stat-card">
-
-<h2>120+</h2>
-
-<p>Institutes</p>
-
-</div>
-
-<div class="stat-card">
-
-<h2>99%</h2>
-
-<p>Satisfaction</p>
-
-</div>
-
-</section>
-
-
-
-<!-- ===================== -->
-<!-- AI Preview -->
-<!-- ===================== -->
-
-<section class="ai-preview">
-
-<h2>
-
-Meet Your AI Assistant
-
-</h2>
-
-<p>
-
-Ask questions anytime and receive instant answers.
-
-</p>
-
-<div class="chat-preview">
-
-<div class="message student">
-
-What is Newton's First Law?
-
-</div>
-
-<div class="message ai">
-
-Newton's First Law states that an object remains at rest
-or moves with constant velocity unless acted upon by
-an external force.
-
-</div>
-
-<div class="message student">
-
-When is today's Biology class?
-
-</div>
-
-<div class="message ai">
-
-Today's Biology class starts at 7.00 PM.
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- ===================== -->
-<!-- Pricing -->
-<!-- ===================== -->
-
-<section class="pricing">
-
-<h2>
-
-Choose Your Plan
-
-</h2>
-
-<div class="pricing-container">
-
-<div class="price-card">
-
-<h3>Starter</h3>
-
-<h1>FREE</h1>
-
-<ul>
-
-<li>Basic Dashboard</li>
-
-<li>Timetable</li>
-
-<li>Homework</li>
-
-</ul>
-
-<a href="#">Get Started</a>
-
-</div>
-
-
-
-<div class="price-card premium">
-
-<h3>Premium</h3>
-
-<h1>$9/mo</h1>
-
-<ul>
-
-<li>AI Chatbot</li>
-
-<li>Attendance</li>
-
-<li>Results</li>
-
-<li>Notifications</li>
-
-<li>Priority Support</li>
-
-</ul>
-
-<a href="#">Buy Now</a>
-
-</div>
-
-</div>
-
-</section><!-- ===================== -->
-<!-- Testimonials -->
-<!-- ===================== -->
-
-<section class="testimonials">
-
-    <h2>What Teachers Say</h2>
-
-    <p>
-        Trusted by teachers and institutes.
-    </p>
-
-    <div class="testimonial-container">
-
-        <div class="testimonial-card">
-
-            <img src="assets/images/teacher1.jpg" alt="Teacher">
-
-            <h3>Mr. John Smith</h3>
-
-            <span>ICT Teacher</span>
-
-            <p>
-                "CODEX EDU BOT has made managing my online classes much easier."
-            </p>
-
-        </div>
-
-        <div class="testimonial-card">
-
-            <img src="assets/images/teacher2.jpg" alt="Teacher">
-
-            <h3>Mrs. Emily Brown</h3>
-
-            <span>Science Teacher</span>
-
-            <p>
-                "The AI chatbot saves a lot of my time by answering student questions."
-            </p>
-
-        </div>
-
-        <div class="testimonial-card">
-
-            <img src="assets/images/teacher3.jpg" alt="Teacher">
-
-            <h3>Mr. David Lee</h3>
-
-            <span>Mathematics Teacher</span>
-
-            <p>
-                "One of the best education platforms I have ever used."
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- ===================== -->
-<!-- FAQ -->
-<!-- ===================== -->
-
-<section class="faq">
-
-<h2>
-
-Frequently Asked Questions
-
-</h2>
-
-<div class="faq-item">
-
-<h3>Can students use the AI chatbot anytime?</h3>
-
-<p>
-Yes. Students can access the chatbot 24/7.
-</p>
-
-</div>
-
-<div class="faq-item">
-
-<h3>Can teachers upload homework?</h3>
-
-<p>
-Yes. Teachers can upload homework, notes and announcements.
-</p>
-
-</div>
-
-<div class="faq-item">
-
-<h3>Does it work on mobile devices?</h3>
-
-<p>
-Yes. The platform is fully responsive.
-</p>
-
-</div>
-
-</section>
-
-
-
-<!-- ===================== -->
-<!-- Contact CTA -->
-<!-- ===================== -->
-
-<section class="contact-cta">
-
-<h2>
-
-Ready To Transform Your Online Class?
-
-</h2>
-
-<p>
-
-Start using CODEX EDU BOT today.
-
-</p>
-
-<a href="#" class="btn-primary">
-
-Get Started
-
-</a>
-
-</section>
-
-
-
-<!-- ===================== -->
-<!-- Footer -->
-<!-- ===================== -->
-
-<footer>
-
-<div class="footer-container">
-
-<div>
-
-<h2>CODEX EDU BOT</h2>
-
-<p>
-
-Modern AI platform for teachers and students.
-
-</p>
-
-</div>
-
-
-<div>
-
-<h3>Quick Links</h3>
-
-<ul>
-
-<li><a href="#">Home</a></li>
-
-<li><a href="#">Features</a></li>
-
-<li><a href="#">Pricing</a></li>
-
-<li><a href="#">Contact</a></li>
-
-</ul>
-
-</div>
-
-
-<div>
-
-<h3>Support</h3>
-
-<ul>
-
-<li>Email Support</li>
-
-<li>Help Center</li>
-
-<li>Privacy Policy</li>
-
-<li>Terms & Conditions</li>
-
-</ul>
-
-</div>
-
-</div>
-
-<div class="copyright">
-
-<p>
-
-© 2026 CODEX STUDIOS. All Rights Reserved.
-
-</p>
-
-</div>
-
-</footer>
-
-
-
-<script src="js/app.js"></script>
-
-</body>
-
-</html>
+}
